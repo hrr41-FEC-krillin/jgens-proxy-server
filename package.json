@@ -14,7 +14,8 @@
   "license": "ISC",
   "homepage": "https://github.com/hrr41-FEC-krillin/jgens-proxy-server#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-http-proxy": "^1.6.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
