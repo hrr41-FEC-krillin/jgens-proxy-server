@@ -7,6 +7,7 @@ const port = 3000;
 app.use(express.static('public'));
 
 app.use('/', proxy('localhost:3100'));
+app.use('/', proxy('localhost:3200'));
 
 
 app.listen(port, () => console.log(`proxy server on ${port} is here!`));
