@@ -1,50 +1,48 @@
 var webpack = require('webpack');
 
 module.exports = {
-  mode: "production",
   entry: {
-    photocarousel: '../photo-carousel/client/components/stylesheet.jsx',
-    castphotos: '../castphotos/client/styled.js',
-    //AUDIENCEREVIEWS: '../AUDIENCE-REVIEWS/client/src/index.jsx',
-    //CRITICREVIEWS: '../CRITIC_REVIEWS/client/Components/Styles.jsx'
+    photocarousel: '../photo-carousel/client/index.jsx',
+    castphotos: '../castphotos/client/index.jsx',
+    AUDIENCEREVIEWS: '../AUDIENCE-REVIEWS/client/src/index.jsx',
+    CRITICREVIEWS: '../CRITIC_REVIEWS/client/index.jsx',
+    moviepreview: ['@babel/polyfill', '../movie-preview/client/src/index.jsx']
   },
   output: {
-    path: __dirname + '/dist',
+    path: __dirname + '/public',
     chunkFilename: '[name].bundle.js',
-    filename: '[name].[chunkhash].bundle.js'
+    filename: '[name].bundle.js'
   },
-
   module: {
-    rules: [{
-      test: /\.js/,
-      exclude: /node_modules/
-    }]
+    rules: [
+      {
+        test: /\.js/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
+        }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          "css-loader"
+        ]
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          "sass-loader"
+        ]
+      }
+    ]
   },
-  resolve: {
-    modules: ['node_modules', '../jgens-proxy-server/node_modules/']
-  },
-
   plugins: [
     new webpack.optimize.SplitChunksPlugin()
-  ],
-
-  optimization: {
-    splitChunks: {
-      chunks: "all",
-      cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/](styled-components)[\\/]/,
-          name: 'styled-components',
-          chunks: 'all'
-        },
-        default: {
-          reuseExistingChunk: true
-        }
-      }
-    },
-    runtimeChunk: {
-      name: 'styled-components'
-    }
-  }
-
- };
+  ]
+};
