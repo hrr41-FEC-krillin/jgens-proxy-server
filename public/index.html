@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <!-- <link
-      rel="stylesheet"
-      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    /> -->
+    <meta charset="UTF-8">
+    <title>Spoiled Potatoes</title>
+    <!-- <link href="styles.css" rel="stylesheet"> -->
   </head>
-  <body>
-    <div>
-      <div id="MoviePreview">Loading Movie Preview...</div>
+  <body style="background-color: white;">
+
+    <div id="MoviePreview"></div>
+
+    <div id="imgmodal"></div>
+    <div id="imgcarousel"></div>
+
+    <div id="cast"></div>
+
+    <div style="width: 800px; margin-right: auto; margin-left: auto;">
+      <div id="cr"></div>
     </div>
-    <div>
-      <div id="imgmodal"></div>
-      <div id="imgcarousel">Loading Image Carousel...</div>
+    <div style="width: 800px; margin-right: auto; margin-left: auto;">
+      <div id="app"></div>
     </div>
-    <div>
-      <div id="cast">Loading Cast...</div>
-    </div>
-    <div>
-      <div id="cr">Loading Critic Reviews...</div>
-    </div>
-    <div id="app">Loading Audience Reviews...</div>
-    <script crossorigin src="http://localhost:3100/bundled.js"></script>
-    <script crossorigin src="http://localhost:3200/bundle.js"></script>
-    <script crossorigin src="http://localhost:3300/bundle.js"></script>
-    <script crossorigin src="http://localhost:3400/bundle.js"></script>
-    <script crossorigin src="http://localhost:3500/bundle.js"></script>
+
+    <!-- <script crossorigin src="http://localhost:3003/bundle.js"></script> -->
+    <script type="text/javascript" src="moviepreview.bundle.js"></script>
+    <script type="text/javascript" src="photocarousel.bundle.js"></script>
+    <script type="text/javascript" src="castphotos.bundle.js"></script>
+    <script type="text/javascript" src="AUDIENCEREVIEWS.bundle.js"></script>
+    <script type="text/javascript" src="CRITICREVIEWS.bundle.js"></script>
   </body>
 </html>
